@@ -1,4 +1,4 @@
-package car.components;
+package vehicles.components;
 
 public class Tyre {
 

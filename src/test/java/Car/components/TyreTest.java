@@ -1,6 +1,6 @@
 package Car.components;
 
-import car.components.Tyre;
+import vehicles.components.Tyre;
 import org.junit.Before;
 import org.junit.Test;
 
