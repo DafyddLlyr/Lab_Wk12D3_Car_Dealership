@@ -1,7 +1,5 @@
-package Car.components;
+package vehicles.components;
 
-import vehicles.components.EngineType;
-import vehicles.components.Engine;
 import org.junit.Before;
 import org.junit.Test;
 

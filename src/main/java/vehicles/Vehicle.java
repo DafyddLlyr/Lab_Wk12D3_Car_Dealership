@@ -6,12 +6,24 @@ import vehicles.components.Tyre;
 
 public abstract class Vehicle {
 
+    private String make;
+    private String model;
     private Engine engine;
     private Tyre tyre;
 
-    public Vehicle(Engine engine, Tyre tyre) {
+    public Vehicle(String make, String model, Engine engine, Tyre tyre) {
+        this.make = make;
+        this.model = model;
         this.engine = engine;
         this.tyre = tyre;
+    }
+
+    public String getMake() {
+        return this.make;
+    }
+
+    public String getModel() {
+        return this.model;
     }
 
     public Engine getEngine() {

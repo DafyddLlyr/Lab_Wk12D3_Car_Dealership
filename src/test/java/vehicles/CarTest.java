@@ -1,7 +1,5 @@
-package Car;
+package vehicles;
 
-import vehicles.Car;
-import vehicles.Configurations;
 import vehicles.components.Engine;
 import vehicles.components.EngineType;
 import vehicles.components.Tyre;
