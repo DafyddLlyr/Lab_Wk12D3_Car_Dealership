@@ -47,12 +47,18 @@ public class CarTest {
     }
 
     @Test
+    public void canSetPrice() {
+        car.setPrice(1);
+        assertEquals(1, car.getPrice());
+    }
+
+    @Test
     public void hasEngine() {
         assertEquals(engine, car.getEngine());
     }
 
     @Test
-    public void hasEngineype() {
+    public void hasEngineType() {
         assertEquals(EngineType.ELECTRIC, car.getEngineType());
     }
 

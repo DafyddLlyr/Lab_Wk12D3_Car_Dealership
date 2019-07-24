@@ -2,18 +2,28 @@ package dealership;
 
 import org.junit.Before;
 import org.junit.Test;
+import vehicles.Car;
+import vehicles.Configurations;
+import vehicles.components.Engine;
+import vehicles.components.EngineType;
+import vehicles.components.Tyre;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 public class DealershipTest {
 
-    Dealership dealership;
+    private Dealership dealership;
+    private Car car;
 
     @Before
     public void setup() {
         Till till = new Till(100000);
         dealership = new Dealership("Arnold Clark", "G6 1GG", till);
+        Engine engine = new Engine(EngineType.ELECTRIC, 1.8, 3000);
+        Tyre tyre = new Tyre("All Weather Ultra 2000", "Dunlop", 17);
+        car = new Car("Tesla", "Roadster", Configurations.CONVERTIBLE, "Red", 35000, engine, tyre);
     }
 
     @Test
@@ -40,4 +50,17 @@ public class DealershipTest {
     public void canHoldCars() {
         assertEquals(0, dealership.getCars().size());
     }
+
+    @Test
+    public void canBuyCars() {
+        assertEquals("Arnold Clark just purchased a Tesla Roadster", dealership.buy(car));
+    }
+
+    @Test
+    public void buyingCarAddsToDealership() {
+        dealership.buy(car);
+        assertEquals(1, dealership.getCars().size());
+        assertTrue(dealership.getCars().contains(car));
+    }
+
 }

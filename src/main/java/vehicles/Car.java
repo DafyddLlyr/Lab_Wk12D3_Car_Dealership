@@ -10,7 +10,7 @@ public class Car extends Vehicle {
     private int price;
 
     public Car(String make, String model, Configurations configuration, String color, int price, Engine engine, Tyre tyre) {
-        super(make, model, engine, tyre);
+        super(make, model, engine, tyre, price);
         this.configuration = configuration;
         this.color = color;
         this.price = price;
@@ -22,10 +22,6 @@ public class Car extends Vehicle {
 
     public String getColor() {
         return this.color;
-    }
-
-    public int getPrice() {
-        return this.price;
     }
 
 }

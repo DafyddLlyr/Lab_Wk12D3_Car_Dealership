@@ -1,6 +1,8 @@
 package people;
 
-public abstract class Person {
+import behaviours.IDamage;
+
+public abstract class Person implements IDamage {
 
     private String name;
 

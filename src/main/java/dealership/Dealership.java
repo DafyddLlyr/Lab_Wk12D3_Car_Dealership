@@ -1,10 +1,13 @@
 package dealership;
 
+import behaviours.IBuy;
+import behaviours.IDamage;
 import vehicles.Car;
+import vehicles.Vehicle;
 
 import java.util.ArrayList;
 
-public class Dealership {
+public class Dealership implements IBuy {
 
     private String name;
     private String postcode;
@@ -37,4 +40,10 @@ public class Dealership {
     public int getMoney() {
         return this.till.getMoney();
     }
+
+    public String buy(Vehicle vehicle) {
+        this.cars.add((Car) vehicle);
+        return this.name + " just purchased a " + vehicle.getMake() + " " + vehicle.getModel();
+    }
+
 }
