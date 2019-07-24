@@ -16,10 +16,11 @@ public class DealershipTest {
 
     private Dealership dealership;
     private Car car;
+    Till till;
 
     @Before
     public void setup() {
-        Till till = new Till(100000);
+        till = new Till(100000);
         dealership = new Dealership("Arnold Clark", "G6 1GG", till);
         Engine engine = new Engine(EngineType.ELECTRIC, 1.8, 3000);
         Tyre tyre = new Tyre("All Weather Ultra 2000", "Dunlop", 17);
@@ -63,4 +64,18 @@ public class DealershipTest {
         assertTrue(dealership.getCars().contains(car));
     }
 
+    @Test
+    public void canRepairCar() {
+        dealership.repair(car, 1000);
+        assertEquals(36000, car.getPrice());
+        assertEquals(99000, dealership.getMoney());
+    }
+
+    @Test
+    public void cannotRepairCarWithoutFunds() {
+        till.setMoney(0);
+        dealership.repair(car, 1000);
+        assertEquals(35000, car.getPrice());
+        assertEquals(0, dealership.getMoney());
+    }
 }

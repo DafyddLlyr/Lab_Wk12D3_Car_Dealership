@@ -17,4 +17,8 @@ public class Till {
     public int getMoney() {
         return this.money;
     }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
 }

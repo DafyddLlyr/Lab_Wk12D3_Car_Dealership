@@ -18,7 +18,6 @@ public class CustomerTest {
     private Engine engine;
     private Tyre tyre;
     private Car car;
-    private Dealership dealership;
 
     @Before
     public void setup() {
@@ -27,7 +26,6 @@ public class CustomerTest {
         tyre = new Tyre("All Weather Ultra 2000", "Dunlop", 17);
         car = new Car("Tesla", "Roadster", Configurations.CONVERTIBLE, "Red", 35000, engine, tyre);
         Till till = new Till(100000);
-        dealership = new Dealership("Arnold Clark", "G6 1GG", till);
     }
 
     @Test

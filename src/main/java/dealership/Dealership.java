@@ -1,13 +1,13 @@
 package dealership;
 
 import behaviours.IBuy;
-import behaviours.IDamage;
+import behaviours.IRepair;
 import vehicles.Car;
 import vehicles.Vehicle;
 
 import java.util.ArrayList;
 
-public class Dealership implements IBuy {
+public class Dealership implements IBuy, IRepair {
 
     private String name;
     private String postcode;
@@ -46,4 +46,16 @@ public class Dealership implements IBuy {
         return this.name + " just purchased a " + vehicle.getMake() + " " + vehicle.getModel();
     }
 
+    public void repair(Vehicle vehicle, int repairCost) {
+        if(this.getMoney() >= repairCost) {
+            int newPrice = vehicle.getPrice() + repairCost;
+            vehicle.setPrice(newPrice);
+            this.pay(repairCost);
+        }
+    }
+
+    public void pay(int repairCost) {
+        int newBalance = this.till.getMoney() - repairCost;
+        this.till.setMoney(newBalance);
+    }
 }

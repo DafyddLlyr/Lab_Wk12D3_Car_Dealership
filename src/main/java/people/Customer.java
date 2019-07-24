@@ -1,6 +1,7 @@
 package people;
 
 import behaviours.IBuy;
+import behaviours.IDamage;
 import behaviours.IRent;
 import vehicles.Vehicle;
 
